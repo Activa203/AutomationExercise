@@ -31,6 +31,10 @@ public class HomePage extends BasePage {
 	@FindBy(xpath = "//div[@class='item active']//button[@type='button'][normalize-space()='Test Cases']")
 	WebElement btn_TestCases;
 	
+	@FindBy(xpath = "//a[@href='/products']")
+	WebElement btn_Products;
+	
+	
 
 	public boolean img_logo() {
 		return img_logo.isDisplayed();
@@ -66,6 +70,10 @@ public class HomePage extends BasePage {
 	
 	public void clickTestCase() {
 		btn_TestCases.click();
+	}
+	
+	public void clickProducts() {
+		btn_Products.click();
 	}
 
 }

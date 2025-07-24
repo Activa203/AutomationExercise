@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-23T20:49:24 IST" name="Suite" finished-at="2025-07-23T20:51:30 IST" duration-ms="125856">
+  <suite started-at="2025-07-24T16:34:47 IST" name="Suite" finished-at="2025-07-24T16:34:58 IST" duration-ms="11052">
     <groups>
     </groups>
-    <test started-at="2025-07-23T20:49:24 IST" name="Test" finished-at="2025-07-23T20:51:30 IST" duration-ms="125856">
-      <class name="testCases.TC007_VerifyTestCasesPages">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC007_VerifyTestCasesPages@5cde6747]" started-at="2025-07-23T20:50:40 IST" name="setup" finished-at="2025-07-23T20:51:28 IST" duration-ms="47575" status="PASS">
+    <test started-at="2025-07-24T16:34:47 IST" name="Test" finished-at="2025-07-24T16:34:58 IST" duration-ms="11052">
+      <class name="testCases.TC008_VerifyProductDetailPage">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC008_VerifyProductDetailPage@63f8276e]" started-at="2025-07-24T16:34:47 IST" name="setup" finished-at="2025-07-24T16:34:52 IST" duration-ms="4989" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,93 +23,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyContactUsFormSubmission()[pri:0, instance:testCases.TC007_VerifyTestCasesPages@5cde6747]" started-at="2025-07-23T20:51:28 IST" name="verifyContactUsFormSubmission" finished-at="2025-07-23T20:51:30 IST" duration-ms="1717" status="PASS">
+        <test-method signature="verifyContactUsFormSubmission()[pri:0, instance:testCases.TC008_VerifyProductDetailPage@63f8276e]" started-at="2025-07-24T16:34:52 IST" name="verifyContactUsFormSubmission" finished-at="2025-07-24T16:34:57 IST" duration-ms="5294" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyContactUsFormSubmission -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC007_VerifyTestCasesPages@5cde6747]" started-at="2025-07-23T20:51:30 IST" name="tearDown" finished-at="2025-07-23T20:51:30 IST" duration-ms="290" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC008_VerifyProductDetailPage@63f8276e]" started-at="2025-07-24T16:34:57 IST" name="tearDown" finished-at="2025-07-24T16:34:58 IST" duration-ms="725" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC007_VerifyTestCasesPages -->
-      <class name="testCases.TC005_RegisterUserWithExistingEmail">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC005_RegisterUserWithExistingEmail@1c32386d]" started-at="2025-07-23T20:49:36 IST" name="setup" finished-at="2025-07-23T20:49:40 IST" duration-ms="3906" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[windows]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verify_account_registration()[pri:1, instance:testCases.TC005_RegisterUserWithExistingEmail@1c32386d]" started-at="2025-07-23T20:49:40 IST" name="verify_account_registration" description="Should register a new user successfully with valid details" finished-at="2025-07-23T20:49:43 IST" duration-ms="2953" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify_account_registration -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC005_RegisterUserWithExistingEmail@1c32386d]" started-at="2025-07-23T20:49:43 IST" name="tearDown" finished-at="2025-07-23T20:49:43 IST" duration-ms="203" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC005_RegisterUserWithExistingEmail -->
-      <class name="testCases.TC006_ContactUsForm">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC006_ContactUsForm@3e30646a]" started-at="2025-07-23T20:49:43 IST" name="setup" finished-at="2025-07-23T20:50:30 IST" duration-ms="47021" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[windows]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyContactUsFormSubmission()[pri:0, instance:testCases.TC006_ContactUsForm@3e30646a]" started-at="2025-07-23T20:50:30 IST" name="verifyContactUsFormSubmission" finished-at="2025-07-23T20:50:40 IST" duration-ms="9922" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyContactUsFormSubmission -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC006_ContactUsForm@3e30646a]" started-at="2025-07-23T20:50:40 IST" name="tearDown" finished-at="2025-07-23T20:50:40 IST" duration-ms="320" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC006_ContactUsForm -->
-      <class name="testCases.TC004_LoginAndLogOut">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC004_LoginAndLogOut@4ce7fffa]" started-at="2025-07-23T20:49:24 IST" name="setup" finished-at="2025-07-23T20:49:30 IST" duration-ms="5331" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[windows]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verify_loginAndLogOut()[pri:0, instance:testCases.TC004_LoginAndLogOut@4ce7fffa]" started-at="2025-07-23T20:49:30 IST" name="verify_loginAndLogOut" description="Login user with valid data.." finished-at="2025-07-23T20:49:36 IST" duration-ms="6138" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify_loginAndLogOut -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC004_LoginAndLogOut@4ce7fffa]" started-at="2025-07-23T20:49:36 IST" name="tearDown" finished-at="2025-07-23T20:49:36 IST" duration-ms="242" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC004_LoginAndLogOut -->
+      </class> <!-- testCases.TC008_VerifyProductDetailPage -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
