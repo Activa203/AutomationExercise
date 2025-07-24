@@ -5,17 +5,14 @@
 <listener class-name="utilities.ExtentReportManager"></listener></listeners>
   <test thread-count="5" name="Test">
   <parameter name="os" value="windows"></parameter>
-  <parameter name="browser" value="edge"></parameter>
+  <parameter name="browser" value="chrome"></parameter>
     <classes>
       <!--<class name="testCases.TC001_RegisterUser"/>-->
       <!-- <class name="testCases.TC003_LoginUserWithInCorrectEmailandPassword"/>-->
-       <!--<class name="testCases.TC004_LoginAndLogOut"/>-->
-      <!-- <class name="testCases.TC005_RegisterUserWithExistingEmail"/>-->
-      <!-- <class name="testCases.TC006_ContactUsForm"/>-->
-       <class name="testCases.TC007_VerifyTestCasesPages"/>
-       
-       
-    
+       <class name="testCases.TC004_LoginAndLogOut"/>
+       <class name="testCases.TC005_RegisterUserWithExistingEmail"/>
+       <class name="testCases.TC006_ContactUsForm"/>
+       <class name="testCases.TC007_VerifyTestCasesPages"/> 
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

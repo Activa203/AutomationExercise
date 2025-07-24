@@ -11,11 +11,11 @@ public class TC002_LoginUserWithCorrectEmailandPassword extends BaseClass {
 
 	@Test(description = "Login user with valid data..")
 	public void verify_login() {
-		HomePage hp = new HomePage(driver);
+		HomePage hp = new HomePage(getDriver());
 
 		Assert.assertTrue(hp.img_logo(), "Homepage logo not visible");
 		hp.click_Signup_login();
-		RegisterLoginPage rlp = new RegisterLoginPage(driver);
+		RegisterLoginPage rlp = new RegisterLoginPage(getDriver());
 		Assert.assertTrue(rlp.checkPageVisible(), "Register/Login page not loaded");
 		
 		// fill user correct data here

@@ -22,7 +22,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import freemarker.template.SimpleDate;
@@ -31,10 +35,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class BaseClass {
-	public static WebDriver driver;
+	//public static WebDriver driver;
+	 public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	public Logger logger;
 	public Properties prop;
-
+	
+	public static WebDriver getDriver() {
+        return driver.get();
+    }
 	@BeforeClass()
 	@Parameters({ "os", "browser" })
 	public void setup(String os, String br) throws IOException {
@@ -50,10 +58,10 @@ public class BaseClass {
 		if (prop.getProperty("execution_env").equalsIgnoreCase("local")) {
 			switch (br.toLowerCase()) {
 			case "chrome":
-				driver = new ChromeDriver();
+				driver.set(new ChromeDriver());
 				break;
 			case "edge":
-				driver = new EdgeDriver();
+				 driver.set(new EdgeDriver());
 				break;
 			default:
 				System.out.println("please provide valid browser..");
@@ -67,21 +75,21 @@ public class BaseClass {
 		}
 		
 		
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-		// driver.get("http://localhost/opencart/upload/");
-		driver.get(prop.getProperty("appURL"));
-		driver.manage().window().maximize();
+		getDriver().manage().deleteAllCookies();
+		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		
+		 getDriver().manage().window().maximize();
+	        getDriver().get(prop.getProperty("appURL"));
 	}
 
-	@AfterClass(groups = { "DataDriven", "Santiy", "Master", "Regression" })
+	@AfterClass()
 	public void tearDown() {
-		driver.quit();
+		  getDriver().quit();	
+		  driver.remove();
 	}
 	
 	 public void waitForElementToBeClickable(WebElement element, int timeoutSeconds) {
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
+	        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeoutSeconds));
 	        wait.until(ExpectedConditions.elementToBeClickable(element));
 	    }
 

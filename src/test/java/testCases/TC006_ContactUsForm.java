@@ -11,12 +11,12 @@ public class TC006_ContactUsForm extends BaseClass {
 	String name;
 
 	@Test
-	public void verifyContactUsFormSubmission() {
-		HomePage hp = new HomePage(driver);
+	public void verifyContactUsFormSubmission() throws InterruptedException {
+		HomePage hp = new HomePage(getDriver());
 		Assert.assertTrue(hp.img_logo(), "Home page logo not visible");
 		hp.clickContactUs();
 
-		ContactUsPage cup = new ContactUsPage(driver);
+		ContactUsPage cup = new ContactUsPage(getDriver());
 		Assert.assertTrue(cup.isContactPageVisible(), "Contact us page not Visible..");
 
 		name = generateRandomString();
@@ -26,8 +26,9 @@ public class TC006_ContactUsForm extends BaseClass {
 		cup.setSubject(name + "  resolve this issue..");
 		cup.uploadFile("E:\\Selenium Projects\\AutomationExercise\\src\\test\\java\\testCases\\TC004_LoginAndLogOut.java");
 		cup.clickSubmit();
+		Thread.sleep(1000);
 
-		driver.switchTo().alert().accept();
+		getDriver().switchTo().alert().accept();
 
 		String expectedMsg = "Success! Your details have been submitted successfully.";
 		String actualMsg = cup.getSuccessMessageText();

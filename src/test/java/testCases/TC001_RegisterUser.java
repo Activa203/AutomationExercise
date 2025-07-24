@@ -14,16 +14,16 @@ import testBase.BaseClass;
 
 public class TC001_RegisterUser extends BaseClass {
 	String name;
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
 	@Test(priority = 1,description = "Should register a new user successfully with valid details")
 	public void verify_account_registration() {
 		try {
-			HomePage hp = new HomePage(driver);
+			HomePage hp = new HomePage(getDriver());
 			Assert.assertTrue(hp.img_logo(), "Homepage logo not visible");
 
 			hp.click_Signup_login();
 
-			RegisterLoginPage rlp = new RegisterLoginPage(driver);
+			RegisterLoginPage rlp = new RegisterLoginPage(getDriver());
 
 			Assert.assertTrue(rlp.checkPageVisible(), "Register/Login page not loaded");
 
@@ -61,11 +61,11 @@ public class TC001_RegisterUser extends BaseClass {
 	@Test(priority = 2, dependsOnMethods = "verify_account_registration")
 	public void verify_login_with_same_credentials() {
 		try {
-			HomePage hp = new HomePage(driver);
+			HomePage hp = new HomePage(getDriver());
 			Assert.assertTrue(hp.img_logo(), "Homepage logo not visible");
 
 			hp.click_Signup_login();
-			RegisterLoginPage rlp = new RegisterLoginPage(driver);
+			RegisterLoginPage rlp = new RegisterLoginPage(getDriver());
 			Assert.assertTrue(rlp.checkPageVisible(), "Register/Login page not loaded");
 
 			rlp.setLoginEmail(name + "@gmail.com");
@@ -81,6 +81,7 @@ public class TC001_RegisterUser extends BaseClass {
 			  hp.clickDelete();
 			  Assert.assertTrue(hp.accDltStatus(),"Account deletion failed..");
 			  hp.clickContinue();
+
 			 
 		 
 			
@@ -93,7 +94,7 @@ public class TC001_RegisterUser extends BaseClass {
 	public boolean signUpForm() {
 		try {
 
-			SignupPage sp = new SignupPage(driver);
+			SignupPage sp = new SignupPage(getDriver());
 			if (!sp.pageVisible()) {
 				return false;
 			}

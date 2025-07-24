@@ -13,10 +13,10 @@ public class TC007_VerifyTestCasesPages extends BaseClass {
 
 	@Test
 	public void verifyContactUsFormSubmission() {
-		HomePage hp = new HomePage(driver);
+		HomePage hp = new HomePage(getDriver());
 		Assert.assertTrue(hp.img_logo(), "Home page logo not visible");
 		hp.clickTestCase();
-		TestCasePage tcp=new TestCasePage(driver);
+		TestCasePage tcp=new TestCasePage(getDriver());
 		Assert.assertTrue(tcp.pageLogoVisible(),"Test case page not visible..");
 	
 

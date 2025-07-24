@@ -14,16 +14,16 @@ import testBase.BaseClass;
 
 public class TC005_RegisterUserWithExistingEmail extends BaseClass {
 	
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
 	@Test(priority = 1,description = "Should register a new user successfully with valid details")
 	public void verify_account_registration() {
 		try {
-			HomePage hp = new HomePage(driver);
+			HomePage hp = new HomePage(getDriver());
 			Assert.assertTrue(hp.img_logo(), "Homepage logo not visible");
 
 			hp.click_Signup_login();
 
-			RegisterLoginPage rlp = new RegisterLoginPage(driver);
+			RegisterLoginPage rlp = new RegisterLoginPage(getDriver());
 
 			Assert.assertTrue(rlp.checkPageVisible(), "Register/Login page not loaded");
 
