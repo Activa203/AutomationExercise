@@ -34,6 +34,25 @@ public class HomePage extends BasePage {
 	@FindBy(xpath = "//a[@href='/products']")
 	WebElement btn_Products;
 	
+	@FindBy(xpath = "//h2[normalize-space()='Subscription']")
+	WebElement logo_subscription;
+	
+	@FindBy(xpath = "//input[@id='susbscribe_email']")
+	WebElement txt_email_subscription;
+	
+	@FindBy(xpath = "//button[@id='subscribe']")
+	WebElement btn_subscribe;
+	
+	@FindBy(xpath = "//div[@class='alert-success alert']")
+	WebElement msg_sub;
+	
+	@FindBy(xpath = "//a[normalize-space()='Cart']")
+	WebElement btn_cart;
+	
+	
+	
+	
+	
 	
 
 	public boolean img_logo() {
@@ -75,5 +94,26 @@ public class HomePage extends BasePage {
 	public void clickProducts() {
 		btn_Products.click();
 	}
-
+	
+	public boolean checkSubscription() {
+		return logo_subscription.isDisplayed();
+	}
+	
+	public void setSubEmail(String email)
+	{
+		txt_email_subscription.sendKeys(email);
+	}
+	
+	public void clickSubscription() {
+		btn_subscribe.click();
+	}
+	
+	public String subMsg() {
+		return msg_sub.getText();
+	} 
+	
+	
+	public void clickCart() {
+		btn_cart.click();
+	}
 }

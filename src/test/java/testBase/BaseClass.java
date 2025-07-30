@@ -82,7 +82,7 @@ public class BaseClass {
 	        getDriver().get(prop.getProperty("appURL"));
 	}
 
-	@AfterClass()
+	//@AfterClass()
 	public void tearDown() {
 		  getDriver().quit();	
 		  driver.remove();
@@ -100,7 +100,7 @@ public class BaseClass {
 
 	public String captureScreen(String tname) throws IOException {
 		String timeStamp = new SimpleDateFormat("yyyyMMddhhss").format(new Date());
-		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+		TakesScreenshot takesScreenshot = (TakesScreenshot) driver.get();
 		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 
 		String targetFilePath = System.getProperty("user.dir") + "\\screenshots\\" + tname + "_" + timeStamp + ".png";
